@@ -1,0 +1,299 @@
+/* GENERAL STYLING */
+:root{
+    --dark-blue: rgb(21, 21, 41)
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background-color: var(--dark-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* END OF GENERAL STYLING */
+
+
+/* WRAPPER STYLING */
+.wrapper{
+    width: 19.38rem;
+    background-color: white;
+    border-radius: 7px;
+    box-shadow: 0 0 10px black;
+    animation: pop 1.2s 0s 1 linear;
+    position: relative;
+    margin-top: 0.5em;
+    
+}
+/* END OF WRAPPER STYLING */
+
+/* SONG DETAILS STYLING */
+.top-bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-bar span{
+    padding: 2em;
+    margin-left: 2em;
+    color: var(--dark-blue);
+    font-size: 1.1em;
+    font-weight: 550;
+}
+.img-area{
+    width: 100%;
+    height: 15em;
+}
+img{
+    height: 100%;
+    width: 80%;
+    margin-left: 1.9em;
+    border-radius: 7px;
+    object-fit: cover;
+}
+.fa-angle-down{
+    color: inherit;
+}
+.song-details {
+    font-size: 1.5rem;
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+.song_name{
+    font-family: cursive;
+    font-weight: 700;
+}
+.artiste_name{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    font-size: 0.7em;
+    transition:  all 0.5s;
+}
+.artiste_name:hover{
+    transform: scale(1.2);
+    font-weight: 600;
+    color: rgb(71, 71, 87);
+}
+
+.controls{
+    display: flex;
+    padding: 2em;
+    justify-content: space-between;
+    margin-top: 2em;
+    
+}
+.play-pause{
+    height: 3em;
+    width: 3em;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px black; 
+    transition: 0.3s all ease-in-out;
+}
+
+.play-pause:hover{
+    background-color: rgb(231, 210, 210);
+    cursor: pointer;
+}
+.fa-circle-play{
+    /* margin-left: 0.5em; */
+    margin-top: 0.2em;
+}
+
+.fa{
+    color: var(--dark-blue);
+    cursor: pointer;
+   
+}
+.fa:hover{
+    color: rgb(44, 44, 88);
+}
+.fa-solid:hover{
+    color: rgb(44, 44, 88);
+}
+
+.fa-solid{
+    color: var(--dark-blue);
+    margin-left: 0.25em;
+    margin-top: 0.25em;
+}
+.progress_area{
+    height: 6px;
+    width: 95%;
+    border-radius: inherit;
+    background-color: #e6e0e0;
+    border-radius: 50px;
+    cursor: pointer;
+    display: grid;
+    justify-self: center;
+    align-items: center;
+    margin-left: 0.45rem;
+}
+.progress_bar{
+    height: inherit;
+    width: 0%;
+    border-radius: inherit;
+    background: rgb(36, 36, 77);
+    position: relative;
+}
+.progress_bar::before{
+    content: "";
+    position: absolute;
+    right: -5px;
+    height: 12px;
+    width: 12px;
+    background: var(--dark-blue);
+    border-radius: inherit;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    top: -3px;
+
+}
+.progress_area:hover, .progress_bar::before{
+    opacity: 1;
+}
+p{
+    color: var(--dark-blue);
+}
+.timer{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1em;
+}
+.timer span{
+    font-size: 0.95em;
+    color: var(--dark-blue);
+}
+.popping{
+    animation-name: popping;
+    animation-duration: 1.9s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: linear;
+}
+/* END OF SONG DETAILS STYLING */
+
+
+/* HIDDEN ELEMENTS */
+
+.music_list{
+    position: absolute;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 15px;
+    left: 0;
+    padding: 15px 30px;
+    box-shadow: 0px -5px 10px rgba(0,0,0,0.1);
+    bottom: -1%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease-out;
+    height: 50%;
+    overflow: hidden;
+}
+
+.close{
+    cursor: pointer;
+}
+.show{
+    pointer-events: auto;
+    bottom: 0%;
+    opacity: 1;
+    overflow: scroll;
+}
+.show::-webkit-scrollbar{
+    width: 0px;
+}
+
+
+li{
+    list-style: none;
+    padding-top: 1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.first-div{
+    display: flex;
+}
+.first-div > h3{
+    font-size: 1em;
+    color: var(--dark-blue);
+}
+.first-div h3{
+    padding-left: 1em;
+}
+
+
+.second-div i{
+    padding-right: 0.5em;
+}
+.red, .close{
+    font-size: 25px;
+    transform: translateY(-0.4em);
+}
+.close{
+    margin-left: 3.8em;
+}
+
+.hidden_song_list h1{
+    font-size: 1rem;
+    color: rgb(26, 26, 58);
+    font-family: 'Poppins', sans-serif;
+}
+.hidden_song_list{
+    display: block;
+
+}
+
+  
+   
+
+.hidden_song_list p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color: rgb(44, 44, 75);
+}
+
+.playing{
+    color: rgb(81, 81, 168);
+    
+}
+
+/* END OF HIDDEN ELEMENTS */
+
+
+/* ANIMATIONS */
+@keyframes pop{
+    0%{
+        transform: scale(0);
+    }
+    30%,99%{
+        transform: scale(1);
+    }
+}
+
+@keyframes popping{
+    0%{
+        transform: scale(1);
+    }
+    19%,30%{
+        transform: scale(1.1);
+    }
+    35%,99%{
+        transform: scale(1);
+    }
+}
+
+
+/* END PF ANIMATIONS */

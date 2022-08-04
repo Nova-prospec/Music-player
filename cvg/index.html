@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <main>
+        <section class="wrapper">
+            <div class="top-bar">
+                <i class="fa fa-angle-down fa-2x"></i>
+                <span>Now Playing</span>
+            </div>
+            <div class="img-area">
+                <img src="" alt="" class="img">
+            </div>
+            <div class="song-details">
+                <p class="song_name"></p>
+                <p class="artiste_name"></p>
+            </div>
+            <div class="progress_area">
+                <div class="progress_bar"></div>
+                <div class="timer">
+                    <span class="current"></span>
+                    <span class="duration"></span>
+                </div>
+                <audio src="" id="main_audio"></audio>
+            </div>
+            <div class="controls">
+                <i id="repeat" class="fa fa-random fa-2x"></i>
+                <i id="previous" class="fa fa-step-backward  fa-2x"></i>
+                <div class="play-pause">
+                    <i class="fa-solid fa-circle-play fa-2x"></i>
+                </div>
+                <i class="fa fa-step-forward fa-2x"></i>
+                <i class="fa fa-music fa-2x"></i>
+            </div>
+
+            <div class="music_list">
+                <div class="first-div">
+                    <i class=" music fa-solid fa-music "></i>
+                    <h3>Music List</h3>
+                    <div class="second-div">
+                        <i class=" close fa-solid fa-close "></i>
+                    </div>
+                </div>
+
+                <div class="hidden_song_list">
+                    <ul></ul>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <script src="js/music-list.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
